@@ -1,0 +1,146 @@
+:root {
+    --cor-principal: #1565c0;
+    --cor-destaque: #0d47a1;
+    --text-color: #333333;
+    --bg-body: #f8f9fa;
+    --bg-card: #ffffff;
+    --bg-hover-tabela: #f1f5f9;
+    --cor-borda: #cccccc;
+    --shadow-admin: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    --transition-fast: 0.2s ease-in-out;
+}
+
+body.dark {
+    --cor-principal: #2196f3;
+    --cor-destaque: #1e88e5;
+    --text-color: #f3f4f6;
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --bg-hover-tabela: #2a2a2a;
+    --cor-borda: #444444;
+    --shadow-admin: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    min-height: 100vh;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.frequenciaAluno {
+    width: 90%;
+    max-width: 500px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.frequenciaAluno h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    transition: color var(--transition-fast);
+}
+
+.listaFrequencia {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.cabecalhoListaFrequencia {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #777777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+body.dark .cabecalhoListaFrequencia {
+    color: #aaaaaa;
+}
+
+.itemFrequencia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-card);
+    padding: 16px 20px;
+    border-radius: 12px; 
+    border: 1px solid var(--cor-borda);
+    box-shadow: var(--shadow-admin); 
+    transition: 
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform 0.15s ease;
+}
+
+.itemFrequencia:hover {
+    background-color: var(--bg-hover-tabela);
+    border-color: var(--cor-principal);
+    transform: translateY(-2px);
+}
+
+.materiaNome {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.porcentagemBadge {
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: rgba(46, 125, 50, 0.1);
+    color: #2e7d32;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+
+.porcentagemBadge.freq-baixa {
+    background: rgba(211, 47, 47, 0.1);
+    color: #d32f2f;
+}
+body.dark .porcentagemBadge.freq-baixa {
+    background: rgba(239, 83, 80, 0.15);
+    color: #ef5350;
+}
+
+
+body.dark .porcentagemBadge:not(.freq-baiba) {
+    background: rgba(129, 199, 132, 0.15);
+    color: #81c784;
+}
+
+.frequenciaAluno button.botao-voltar {
+    background: transparent;
+    color: var(--cor-principal);
+    border: none;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    align-self: center; 
+    width: auto;
+    transition: color var(--transition-fast);
+}
+
+.frequenciaAluno button.botao-voltar:hover {
+    color: var(--cor-destaque);
+    text-decoration: underline;
+}

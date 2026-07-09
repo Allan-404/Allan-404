@@ -1,0 +1,116 @@
+:root {
+    --cor-principal: #1565c0;
+    --cor-destaque: #0d47a1;
+    --text-color: #333333;
+    --bg-body: #f8f9fa;
+    --bg-card: #ffffff;
+    --cor-borda: #cccccc;
+    --text-button: #ffffff;
+    --shadow-admin: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    --transition-fast: 0.2s ease-in-out;
+}
+
+body.dark {
+    --cor-principal: #2196f3;
+    --cor-destaque: #1e88e5;
+    --text-color: #f3f4f6;
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --cor-borda: #444444;
+    --shadow-admin: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    min-height: 100vh;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+
+.formProfessor {
+    width: 90%;
+    max-width: 500px;
+    margin: 40px auto;
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-admin);
+    color: var(--text-color);
+    position: relative;
+    transition: background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.formProfessor h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.formProfessor input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.formProfessor input:focus {
+    outline: none;
+    border-color: var(--cor-principal);
+}
+
+.formProfessor input::placeholder {
+    color: #999999;
+}
+
+body.dark .formProfessor input::placeholder {
+    color: #777777;
+}
+
+.formProfessor button {
+    width: 100%;
+    padding: 12px;
+    background: var(--cor-principal);
+    color: var(--text-button);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.formProfessor button:hover {
+    background: var(--cor-destaque);
+}
+
+.formProfessor .botao-voltar {
+    background: transparent !important;
+    color: var(--cor-principal);
+    border: none ;
+    margin-top: 15px;
+    font-size: 0.9rem ;
+    font-weight: 500 ;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    transition: color var(--transition-fast);
+}
+
+.formProfessor .botao-voltar:hover {
+    color: var(--cor-destaque);
+    text-decoration: underline;
+}
